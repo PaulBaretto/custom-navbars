@@ -1,47 +1,8 @@
-let navToggler = document.querySelector(".nb-toggler");
-let smNav = document.querySelector(".nav-7-mobile");
-let navTogglerIcon = document.querySelector(".nb-toggler");
-let innerMenu = document.querySelectorAll(".inner_menu");
+    
 
-// show/hide Mobile Nav
-navToggler.addEventListener("click", show_hide_Nav);
-function show_hide_Nav() {
-  console.log(smNav);
-  smNav.classList.toggle("navshow");
-}
-
-// open submenu code
-function openSubMenu(e, innerMenu) {}
-innerMenu.forEach((eachInnerMenu) => {
-  eachInnerMenu.addEventListener("click", (e) => {
-    console.log(innerMenu);
-    innerMenu.forEach((element) => {
-      element.classList.remove("showInnerSubMenu");
-      element.classList.remove("activeMenu");
-    });
-
-    // let dropdownIcon = e.target.parentElement.querySelector(".nav-icon").children[0];
-    // console.log(dropdownIcon);
-    console.log(e.target.tagName);
-    if (e.target.tagName === "A") {
-      console.log(e.target.closest("li"));
-      e.target.closest("li").classList.remove("showInnerSubMenu");
-      // e.target.closest('li').classList.remove("activeMenu");
-
-      if (!e.target.closest("li").classList.contains("showInnerSubMenu")) {
-        e.target.closest("li").classList.add("showInnerSubMenu");
-        e.target.closest("li").classList.add("activeMenu");
-      }
-
-     
-
-      console.log("true");
-      console.log(e.target);
-    } else {
-      console.log("fales");
-    }
-  });
-});
+let aboutRemove = document.querySelector('.nav-7-mobile')
+aboutRemove.remove();
+console.log(aboutRemove);
 
 
 
@@ -56,6 +17,7 @@ innerMenu.forEach((eachInnerMenu) => {
 // let open_lists = document.querySelectorAll('.nbmeg-list-mob')
 // let mob_list = document.getElementById("sm-list")
 
+
 // mob_sub.addEventListener('click', () => {
 //     open_sub.classList.toggle ('nav-opened')
 // })
@@ -63,6 +25,7 @@ innerMenu.forEach((eachInnerMenu) => {
 // mob_mega.addEventListener('click', () => {
 //     open_mega.classList.toggle ('nav-opened')
 // })
+
 
 // open_lists.forEach(open_list => {
 //     open_list.addEventListener('click', () =>{
@@ -82,6 +45,7 @@ innerMenu.forEach((eachInnerMenu) => {
 // let mob_list = document.getElementById("sm-list")
 // let sm_nav_show_btn = document.querySelector('.nb-toggler');
 
+
 // mob_sub.addEventListener('click', () => {
 //     open_sub.classList.toggle ('nav-opened')
 // })
@@ -90,11 +54,13 @@ innerMenu.forEach((eachInnerMenu) => {
 //     open_mega.classList.toggle ('nav-opened')
 // })
 
+
 // open_lists.forEach(open_list => {
 //     open_list.addEventListener('click', () =>{
 //         open_list.classList.toggle ('list-opened')
 //     })
 // });
+
 
 // sm_nav_show_btn.addEventListener('click', () => {
 //     smNav.classList.toggle('sm-show-nav-items')
@@ -109,7 +75,24 @@ innerMenu.forEach((eachInnerMenu) => {
 //     }
 // })
 
-// // nav-6 menu code
+
+let navToggler = document.querySelector('.nb-toggler');
+let smNav = document.querySelector('.nav-mobile-canvas');
+let navTogglerIcon = document.querySelector('.nb-toggler')
+
+// show/hide Mobile Nav 
+navToggler.addEventListener('click',  show_hide_Nav);
+
+function show_hide_Nav(e){
+    smNav.classList.toggle('navshow')
+    navToggler.classList.toggle('navclose')
+}
+
+jQuery('.nb-hover-after.nav-link ').hover(function(){
+    jQuery(this).trigger('click');
+});
+
+// // nav-6 menu code 
 // jQuery(".nav-7-item-has-child .nav-7-submenu").after("<i class='nav-7-arrow'></i>");
 
 //     //Mobile menu

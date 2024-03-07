@@ -121,36 +121,62 @@ html {
         background: transparent;
         position: relative;
         margin-inline: 5px;
-        /* color: #2D3436; */
-        /* font-size: 16px; */
-        /* font-weight: 500; */
         transition: 0.5s;
     }
     
     .nb-btn-style-1:hover, .nb-btn-style-1.active{
        color: #FF6D3B;
     }
-    .nb-btn-style-2 {
-        background: transparent;
-        font-size: 16px;
-        font-weight: 500;
-        color: #2D3436;
+    .nb-hover-after{
+        position: relative;
         transition: 0.4s;
-        margin-block: 5px;
+        max-height: 72px;
     }
-    .nb-btn-style-2:hover{
-        /* color: #B67C7C; */
+    .nb-hover-after::after {
+        content: '';
+        position: absolute;
+        width: 80%;
+        height: 60%;
+        background-image: url(../images/nav-after.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        bottom: 0px;
+        left: 40px;
+        /* z-index: -1; */
+        opacity: 0;
+        transition: 0.4s;
     }
-   
+    .nb-hover-after:hover::after, .nb-hover-after.active::after{
+        opacity: 1;
+    }
+        .item-grid.nb-hover-after::after {
+            content: '';
+            position: absolute;
+            width: 85%;
+            height: 100%;
+            background-image: url(../images/nav-after.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+            bottom: -20px;
+            left: 40px;
+            /* z-index: -1; */
+            opacity: 0;
+            transition: 0.4s;
+        }
+        .item-grid.nb-hover-after:hover::after{
+            opacity: 1;
+        }
+        .nb-subnav:nth-child(2){
+           width: 220%;
+        }
+    
+    
     
     /* submenu css */
     .nb-subnav-items {
         background: #ffffff;
         padding: 1rem;
         border-radius: 15px;
-        /* width: 1000px; */
-        /* display: grid; */
-        /* justify-content: space-around; */
         transition: 0.4s;
     }
     .nb-subnav {
@@ -160,8 +186,6 @@ html {
         z-index: 1;
         transition: 0.4s;
         width: 180%;
-        /* height: 130px; */
-        /* display: flex; */
         align-items: end;
         visibility: hidden;
         opacity: 0;
@@ -169,15 +193,18 @@ html {
     .nav-span-content{
         font-size: 12px;
         font-weight: 300;
-        color: #fff;
+        color: #000434;
     }
     .nav-items:hover .nb-subnav{
         top: 75px;
         visibility: visible;
         opacity: 1;
     }
-    li.item-grid:nth-child(2), li.item-grid:nth-child(4), li.item-grid:nth-child(6) {
+    li.item-grid:nth-child(2), li.item-grid:nth-child(4) {
         margin-block: 25px;
+    }
+    li.item-grid:nth-child(6){
+        margin-top:25px
     }
     .item-grid{
         list-style-type: none;
@@ -188,21 +215,17 @@ html {
         align-items: center;
     }
     .item-icon{
-        display: grid;
-        align-items: center;
         text-align: center;
-        height: 50px;
-        width: 50px;
     }
     .nav-icon{
         font-size: 20px;
-        color: #fff;
+        color: #000434;
     }
     /* submenu css ends here */
     
     /* meganav starts here */
     .nb-meganav-items {
-        background-image: url(../images/Section2_BG.png);
+        background-image: url(../images/Section2_BG_2.png);
         padding-block: 1rem;
         background-blend-mode: soft-light;
         background-size: cover;
@@ -217,13 +240,9 @@ html {
         border-radius: 15px;
         top: 50px;
         left: -230px;
-        /* top: 260px; */
-        /* left: 0px; */
         z-index: -1;
         transition: 0.4s;
-        /* height: 450px; */
         width: 480%;
-        /* display: flex; */
         align-items: end;
         visibility: hidden;
         opacity: 0;
@@ -234,15 +253,14 @@ html {
         background: transparent;
     }
     .nav-items:hover .nb-meganav{
-        top: 90px;
+        top: 75px;
         visibility: visible;
         opacity: 1;
+        z-index: 2;
     }
-    /* .nav-items:hover .nb-meganav-items{
-        box-shadow: 0px 1px 20px 0px #333;
-    } */
-    
-    
+    .nb-meganav-items .nav{
+        border-right: 1px solid #bdbdbd;
+    }
     .nav-pills .nav-link.active, .nav-pills .show>.nav-link{
         background-color: transparent;
     }
@@ -323,21 +341,13 @@ html {
                 width: 55%;
             }
         }
-       
     }
 
 }
     
     /* Tab + Moblie End */
 
-@media only screen and (max-width:600px){
-    .nav8-header#nav8-header
-    .nav-logo {
-        width: 50%;
-        position: relative;
-        z-index: 1;
-    }
-}
+
 
 
 
