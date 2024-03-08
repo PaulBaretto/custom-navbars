@@ -47,22 +47,28 @@ innerMenu.forEach((eachInnerMenu) => {
   });
 });
 
-let whatWeOffer = document.querySelector('.whatWeOffer');
-console.log(whatWeOffer);
-whatWeOffer.addEventListener('click', (e) => {
-  e.target.closest('li').classList.add('showWhatWeOffer')
-  // console.log(e.target);
+
+
+// slide in button code 
+let slider_in_menus = document.querySelectorAll('.slide_in_menu');
+slider_in_menus.forEach(slider_in_menu => {
+  slider_in_menu.addEventListener('click', (e) => {
+    e.target.closest('li').classList.add('showSlide_in_menu')
+    // console.log(`Click on ${e.target}`);
+    // console.log(e.target);
+  })
+
 })
 
-let MegaNavbackButton = document.querySelector('.back_button')
-MegaNavbackButton.addEventListener('click', () => {
-  // console.log('test');
-  whatWeOffer.classList.remove('showWhatWeOffer')
-  // console.log(whatWeOffer);
-})
+// let MegaNavbackButton = document.querySelector('.back_button')
+// MegaNavbackButton.addEventListener('click', () => {
+//   // console.log('test');
+//   slider_in_menu.classList.remove('showSlide_in_menu')
+//   // console.log(whatWeOffer);
+// })
 
-eventOnBody.addEventListener('click', () => {
-  if(smNav.classList.contains = 'navshow'){
-    console.log('Nav is opend');
-  }
-})
+// eventOnBody.addEventListener('click', () => {
+//   if(smNav.classList.contains = 'navshow'){
+//     console.log('Nav is opend');
+//   }
+// })
