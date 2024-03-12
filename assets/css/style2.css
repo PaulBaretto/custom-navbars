@@ -175,7 +175,7 @@ html {
 }
 
 .nav-7-item-has-child:not(.nav-7-item-has-mega-menu) {
-  position: relative;
+  /* position: relative; */
 }
 .subMenu{
     position: relative;
@@ -473,6 +473,7 @@ html {
   margin-bottom: 5px;
 }
 .wwo-title h3{
+  font-size: 20px;
   margin-bottom: 0;
 }
 

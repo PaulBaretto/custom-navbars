@@ -47,22 +47,20 @@ innerMenu.forEach((eachInnerMenu) => {
   });
 });
 
-let whatWeOffer = document.querySelector('.whatWeOffer');
-console.log(whatWeOffer);
-whatWeOffer.addEventListener('click', (e) => {
-  e.target.closest('li').classList.add('showWhatWeOffer')
-  // console.log(e.target);
+let whatWeOffer = document.querySelectorAll('.whatWeOffer');
+
+whatWeOffer.forEach((eachWhatWeOffer) => {
+  eachWhatWeOffer.addEventListener('click', (e) => {
+    e.target.closest('li').classList.add('showWhatWeOffer')
+  })
+  
+  let MegaNavbackButton = document.querySelectorAll('.back_button')
+  MegaNavbackButton.forEach((eachMegaNavBackButton) => {
+    eachMegaNavBackButton.addEventListener('click', () => {
+      eachWhatWeOffer.classList.remove('showWhatWeOffer')
+    })
+  })
+
+
 })
 
-let MegaNavbackButton = document.querySelector('.back_button')
-MegaNavbackButton.addEventListener('click', () => {
-  // console.log('test');
-  whatWeOffer.classList.remove('showWhatWeOffer')
-  // console.log(whatWeOffer);
-})
-
-eventOnBody.addEventListener('click', () => {
-  if(smNav.classList.contains = 'navshow'){
-    console.log('Nav is opend');
-  }
-})
